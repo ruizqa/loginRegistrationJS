@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Login and Registration </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+    </head>
+    <body>
+
+
+
+        <div class="container section">
+            <div class="row">
+                <form method="POST" action="/registration" class="col s12 l6">
+                    <h1 class="center"> Register </h1>
+                    <% if(messages.registration) { %> 
+                        <% for(let i=0; i<messages.registration.length;i++){ %>
+                            <p><%= messages.registration[i] %> </p>
+                        <% } %>
+                        <% } %>
+                        
+                    <div class="input-field col s12">
+                        <input type="email" name="email" class="validate"/>
+                        <label for="email" >Email:</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="firstName" class="validate"/>
+                        <label for="firstName" >First Name:</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="lastName" class="validate"/>
+                        <label for="lastName" >Last Name:</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="password" name="password" class="validate"/>
+                        <label for="password" >Password:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="date" name="birthday" class="validate"/>
+                        <label for="birthday" >Birthday:</label>
+                    </div>
+
+
+                    <div class="input-field col s12 center">
+                        <input type="submit" class="btn" value="Register"/>
+                    </div>
+                </form >
+
+                <form method="POST" action="/login" class="col s12 l6">
+                    <h1 class="center"> Login </h1>
+                    <% if(messages.login) { %> 
+                        <% for(let i=0; i<messages.login.length;i++){ %>
+                            <p><%= messages.login[i] %> </p>
+                        <% } %>
+                        <% } %> 
+                    <div class="input-field col s12">
+                        <input type="text" name="email" class="validate"/>
+                        <label for="email" >Email:</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="password" name="password" class="validate"/>
+                        <label for="password" >Password:</label>
+                    </div>
+
+                    <div class="input-field col s12 center">
+                        <input type="submit" class="btn" value="Login"/>
+                    </div>
+                </form >
+
+
+            </div>
+
+        </div>
+       
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>
